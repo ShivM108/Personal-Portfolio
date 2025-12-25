@@ -1,0 +1,1573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaazarSathi - Professional Website Development Agency</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script
+        src="https://script.google.com/macros/s/AKfycbxT3DS-vkbECnAqvdo-WFlRaam8p5gbWhvCreXz-LWgmfI9wGUv27R2a5DZvPOBrun7TA/exec"></script>
+    <script
+        src="https://script.google.com/macros/library/d/15dYwQWAwxSioEO1W_WKukFTpwcSjojWHNqt_gg0CTksB5unlWRSM4uFG/1"></script>
+    <script
+        src="https://docs.google.com/spreadsheets/d/1nIJZM73Iqez0RAukgHx9Nwb6iWObTZol8iG5W48eM_w/edit?gid=0#gid=0"></script>
+    <style>
+        /* CSS Variables for 70-20-10 Color Rule */
+        :root {
+            --primary-color: #F8F9FA;
+            /* 70% - Background */
+            --secondary-color: #2D3748;
+            /* 20% - Text & Supporting */
+            --accent-color: #2563EB;
+            /* 10% - Accent & CTAs */
+            --accent-hover: #1D4ED8;
+            --chatbot-user: #E5E7EB;
+            --white: #FFFFFF;
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--secondary-color);
+            border: 2px solid var(--secondary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--secondary-color);
+            color: var(--white);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        /* Logo Styles */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo-main {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-color);
+            letter-spacing: -0.5px;
+            line-height: 1;
+            position: relative;
+        }
+
+        .agency-mark {
+            position: absolute;
+            top: -5px;
+            right: -15px;
+            background-color: var(--accent-color);
+            color: white;
+            font-size: 0.5rem;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: 700;
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 2px;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .logo-tagline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #E2E8F0 100%);
+            padding: 150px 0 100px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: var(--secondary-color);
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            background-color: var(--white);
+        }
+
+        .founder-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .founder-image {
+            text-align: center;
+        }
+
+        .founder-img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .founder-name {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .founder-title {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .founder-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+            border-left: 4px solid var(--accent-color);
+            padding-left: 20px;
+        }
+
+        .founder-bio {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .founder-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -10px;
+            width: 50%;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-form {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #E2E8F0;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .appointment-section {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #E2E8F0;
+        }
+
+        .appointment-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .timing-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .timing-option {
+            padding: 8px 15px;
+            border: 1px solid #E2E8F0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .timing-option:hover {
+            border-color: var(--accent-color);
+        }
+
+        .timing-option.selected {
+            background-color: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .info-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .info-card i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        /* Chatbot Styles */
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .chatbot-toggle {
+            width: 60px;
+            height: 60px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .chatbot-toggle:hover {
+            background-color: var(--accent-hover);
+            transform: scale(1.05);
+        }
+
+        .chatbot-window {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 380px;
+            height: 500px;
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chatbot-header {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chatbot-header h3 {
+            margin: 0;
+            color: var(--white);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            padding: 12px 16px;
+            border-radius: 18px;
+            max-width: 80%;
+            line-height: 1.4;
+        }
+
+        .bot-message {
+            background-color: var(--white);
+            border: 1px solid var(--accent-color);
+            align-self: flex-start;
+            border-bottom-left-radius: 5px;
+        }
+
+        .user-message {
+            background-color: var(--accent-color);
+            color: var(--white);
+            align-self: flex-end;
+            border-bottom-right-radius: 5px;
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 15px;
+            border-top: 1px solid #E2E8F0;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #E2E8F0;
+            border-radius: 30px;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .chatbot-input button {
+            background-color: var(--accent-color);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .chatbot-input button:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .quick-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .quick-option {
+            background-color: var(--primary-color);
+            border: 1px solid #E2E8F0;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .quick-option:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        .quick-questions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .quick-question {
+            background-color: var(--primary-color);
+            border: 1px solid #E2E8F0;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .quick-question:hover {
+            background-color: var(--accent-color);
+            color: var(--white);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #CBD5E0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #4A5568;
+            color: #CBD5E0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .step:not(:last-child)::after {
+                display: none;
+            }
+
+            .process-steps {
+                gap: 30px;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-container {
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+
+            .chatbot-window {
+                width: 320px;
+                height: 450px;
+            }
+
+            .appointment-fields {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-questions {
+                grid-template-columns: 1fr;
+            }
+
+            .founder-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .founder-image {
+                order: 2;
+            }
+
+            .founder-info {
+                order: 1;
+            }
+
+            .founder-name {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 130px 0 80px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .chatbot-container {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .chatbot-window {
+                width: 300px;
+                right: -20px;
+            }
+
+            .logo-main {
+                font-size: 1.7rem;
+            }
+
+            .logo-tagline {
+                font-size: 0.6rem;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div style="display:inline-flex;align-items:center;gap:8px;margin:0;padding:0;white-space:nowrap;">
+                    <img src="Baazarsathi logo.png" alt="BaazarSathi Logo"
+                        style="height:47px;width:auto;margin:0;padding:0;display:block;">
+                    <div style="margin:0;padding:0;line-height:1;">
+                        <div class="logo-main" style="font-size:24px;font-weight:700;color:#2563eb;margin:0;padding:0;">
+                            Baazar<span>Sathi</span> <span class="agency-mark">AGENCY</span></div>
+                        <div class="logo-tagline " style="font-size:12px;letter-spacing:2px;margin-top:2px;">
+                            MARKETPLACE
+                        </div>
+                    </div>
+                </div>
+
+                <!-- this a shows a bugs in the media queries that why changes and comtt -->
+                <!-- <a href="#" class="logo-link"></a>
+                    <img src="e:\BaazarSathi_Agency Web\Baazarsathi logo.png" alt="Baazarsathi-logo"
+                        style="width: 60px; height: 60px; border-radius: 10px; display:block">   
+                <div class="logo-container">
+                    <div class="logo-main">BaazarSathi<span class="agency-mark">AGENCY</span></div>
+                    <div class="logo-tagline">MARKETPLACE</div>
+                </div> -->
+
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#founder">Leadership</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Websites That Grow With Your Vision</h1>
+            <p>We design, build, and optimize stunning websites for news, education, business, and personal brands.
+                Full-service SEO and redesigns to propel you forward.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn">Get Your Free Quote</a>
+                <a href="#services" class="btn btn-secondary">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Custom Website Solutions</h2>
+                <p>We create tailored websites that drive results for your specific needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3>News & Magazine Websites</h3>
+                    <p>Dynamic, high-traffic platforms built for speed and engagement with real-time content updates.
+                    </p>
+                    <a href="newshub website demo.html" class="btn btn-secondary">See Demo</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>School & College Websites</h3>
+                    <p>Informative, accessible, and easy-to-manage sites for educational institutions of all sizes.</p>
+                    </br>
+                    <a href="Edu Hub.html" class="btn btn-secondary">See Demo</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Company & Business Websites</h3>
+                    <p>Professional corporate sites that build credibility, showcase services, and generate leads.</p>
+                    <a href="buzznep business demo.html" class="btn btn-secondary">See Demo</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Personal Websites & Portfolios</h3>
+                    <p>Unique online spaces to showcase your work, skills, and personality to the world.</p>
+                    <a href="personal portfolio uniqu dsign.html" class="btn btn-secondary">See Demo</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-blog"></i>
+                    </div>
+                    <h3>Blog Websites</h3>
+                    <p>Clean, content-focused designs optimized for reader experience, engagement, and growth.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h3>Online Teaching Platforms</h3>
+                    <p>Interactive and intuitive websites for courses, tutorials, and digital learning experiences.</p>
+                    <a href="Edu Hub.html" class="btn btn-secondary">See Demo</a>
+                </div>
+            </div>
+            <div class="additional-services" style="margin-top: 50px; text-align: center;">
+                <h3>Additional Services</h3>
+                <div class="services-grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); margin-top: 30px;">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>SEO Services</h3>
+                        <p>Dominate search rankings. We make sure your new or existing site gets found by your target
+                            audience.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <h3>Website Re-Creation</h3>
+                        <p>Is your website outdated? We'll rebuild it with modern design and powerful technology.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder & CEO Section -->
+    <section id="founder" class="founder-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Leadership</h2>
+                <p>The vision behind BaazarSathi's success</p>
+            </div>
+            <div class="founder-container">
+                <div class="founder-image">
+                    <!-- Replace the src URL with your actual image URL -->
+                    <!-- <img src="c:\Users\harij\Downloads\WhatsApp_Image_2025-09-18_at_11.48.13_AM-removebg-preview.png"
+                        alt="Founder & CEO" class="founder-img"> -->
+
+                    <!--This html code to paste by online live image url that why i'll mention on it ?  -->
+                    <img src="https://i.ibb.co/WNPpKR2s/Whats-App-Image-2025-09-18-at-11-48-13-AM-removebg-preview.png"
+                        alt="Founder & CEO" class="founder-img">
+                </div>
+                <div class="founder-info">
+                    <h2 class="founder-name">Shiv Kumar Mochi</h2>
+                    <h3 class="founder-title">Founder & CEO</h3>
+                    <p class="founder-quote">"Our mission is to democratize web presence for businesses of all sizes,
+                        making professional digital solutions accessible to everyone."</p>
+                    <p class="founder-bio">With over 2+ years of experience in web development and digital marketing,
+                        <b>shiv</b> founded BaazarSathi with a vision to bridge the gap between small businesses and
+                        professional web solutions. His expertise in creating scalable digital platforms has helped
+                        hundreds of businesses establish their online presence.
+                    </p>
+                    <p class="founder-bio">Under his leadership, BaazarSathi has grown from a small startup to a trusted
+                        agency serving clients across multiple industries with custom website solutions and digital
+                        strategies.</p>
+                    <div class="founder-social">
+                        <a href="https://www.linkedin.com/in/shiv-kumar-a69626205?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                            class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/shivharijan01" class="social-icon"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/shiv_mahara_01/?igsh=MWlxbG0xMG8wMGFwaQ%3D%3D#"
+                            class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <!-- this places for my website link to show in browser hide a comment  -->
+                        <!-- <a href="#" class="social-icon"><i class="fas fa-globe"></i></a> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" style="background-color: var(--white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Simple Process</h2>
+                <p>We follow a streamlined approach to deliver exceptional results</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Consult</h3>
+                    <p>We begin with understanding your vision, goals, and requirements through detailed discussions.
+                    </p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Design & Develop</h3>
+                    <p>Our team creates stunning designs and develops your website with the latest technologies.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Launch & Support</h3>
+                    <p>We deploy your website and provide ongoing support to ensure optimal performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" style="background-color: var(--primary-color);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us for a free consultation or to schedule an appointment</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
+                                <option value="website">Website Development</option>
+                                <option value="seo">SEO Services</option>
+                                <option value="redesign">Website Redesign</option>
+                                <option value="news">News Website</option>
+                                <option value="school">School/College Website</option>
+                                <option value="business">Business Website</option>
+                                <option value="portfolio">Personal Portfolio</option>
+                                <option value="blog">Blog Website</option>
+                                <option value="teaching">Online Teaching Platform</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <div class="appointment-section">
+                            <h3>Schedule an Appointment (Optional)</h3>
+                            <div class="appointment-fields">
+                                <div class="form-group">
+                                    <label for="appointment-date">Appointment Date</label>
+                                    <input type="date" id="appointment-date" name="appointment-date">
+                                </div>
+                                <div class="form-group">
+                                    <label for="appointment-time">Appointment Time</label>
+                                    <select id="appointment-time" name="appointment-time">
+                                        <option value="">Select a time</option>
+                                        <option value="09:00">9:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Quick Time Selection</label>
+                                <div class="timing-options">
+                                    <div class="timing-option" data-time="09:00">9 AM</div>
+                                    <div class="timing-option" data-time="11:00">11 AM</div>
+                                    <div class="timing-option" data-time="14:00">2 PM</div>
+                                    <div class="timing-option" data-time="16:00">4 PM</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn" style="width: 100%; margin-top: 20px;">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3><i class="fas fa-map-marker-alt"></i> Our Location</h3>
+                        <p>Siraha,Madhesh provence,Nepal<br>Lahan-6(56500)</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fas fa-phone"></i> Contact Information</h3>
+                        <p>Phone: +9779811706572 <br>Email: info@baazarsathi.com</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fas fa-clock"></i> Business Hours</h3>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 4:00 PM<br>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3><i class="fas fa-robot"></i> BaazarSathi Assistant</h3>
+                <button class="chatbot-close" id="chatbotClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    Hi there! 👋 I'm your BaazarSathi assistant. How can I help you today?
+                    <div class="quick-questions">
+                        <div class="quick-question" data-question="website">Website Development</div>
+                        <div class="quick-question" data-question="seo">SEO Services</div>
+                        <div class="quick-question" data-question="redesign">Website Redesign</div>
+                        <div class="quick-question" data-question="pricing">Pricing Information</div>
+                        <div class="quick-question" data-question="timeline">Project Timeline</div>
+                        <div class="quick-question" data-question="contact">Contact Options</div>
+                    </div>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Ask me anything...">
+                <button id="chatbotSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo-container">
+                        <div class="logo-main" style="color: var(--white);">BaazarSathi<span
+                                class="agency-mark">AGENCY</span></div>
+                        <div class="logo-tagline" style="color: #CBD5E0;">MARKETPLACE</div>
+                    </div>
+                    <p style="margin-top: 15px; color: #CBD5E0;">Creating exceptional digital experiences that drive
+                        growth and success for businesses of all sizes.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#founder">Leadership</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">News Websites</a></li>
+                        <li><a href="#">Educational Websites</a></li>
+                        <li><a href="#">Business Websites</a></li>
+                        <li><a href="#">Personal Portfolios</a></li>
+                        <li><a href="#">Blog Websites</a></li>
+                        <li><a href="#">Online Teaching Platforms</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Lahan - 6, Siraha, Madhesh Provence.Nepal(56500)</li>
+                        <li><i class="fas fa-phone"></i> +9779811706572 </li>
+                        <li><i class="fas fa-envelope"></i> info@baazarsathi.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>copyright&copy; by 2025 BaazarSathi. All Rights Reserved.</p><i><b>Develop By Shiv</i></b>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize EmailJS with your Public Key
+        // Replace "YOUR_PUBLIC_KEY" with your actual EmailJS public key
+        (function () {
+            emailjs.init("7WL2vnM5rZeM66tBU");
+        })();
+
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function () {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Scroll to Top Functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', function () {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Contact Form Timing Selection
+        const timingOptions = document.querySelectorAll('.timing-option');
+        const timeSelect = document.getElementById('appointment-time');
+
+        timingOptions.forEach(option => {
+            option.addEventListener('click', function () {
+                // Remove selected class from all options
+                timingOptions.forEach(opt => opt.classList.remove('selected'));
+
+                // Add selected class to clicked option
+                this.classList.add('selected');
+
+                // Set the select value
+                timeSelect.value = this.getAttribute('data-time');
+            });
+        });
+
+        // Contact Form Submission with EmailJS
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value,
+                appointment_date: document.getElementById('appointment-date').value,
+                appointment_time: document.getElementById('appointment-time').value,
+                from_website: 'BaazarSathi Website',
+                timestamp: new Date().toLocaleString()
+            };
+
+            document.getElementById("contactForm").addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const form = e.target;
+                const status = document.getElementById("formStatus");
+
+                const payload = {
+                    name: form.name.value.trim(),
+                    email: form.email.value.trim(),
+                    message: form.message.value.trim(),
+                    phone: form.phone.value.trim(),
+                    service: form.service.value.trim(),
+                    appointment_date: form["appointment-date"].value.trim(),
+                    appointment_time: form["appointment-time"].valuetrim(),
+                    from_website: "BaazarSathi Website",
+                    timestamp: new Date().toLocaleString()
+                };
+
+                fetch(BaazarSathi_contactUs, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                })
+                    .then(response => response.json())
+                    .then(result => {
+                        if (result.status === "success") {
+                            status.textContent = "Message sent successfully.";
+                            form.reset();
+                        } else {
+                            status.textContent = "Submission failed.";
+                        }
+                    })
+                    .catch(error => {
+                        status.textContent = "Error submitting form.";
+                        console.error(error);
+                    });
+            });
+
+
+
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            // Send email using EmailJS
+            emailjs.send('service_yuc9klh', 'template_zy7xxrw', formData)
+                .then(function (response) {
+                    alert('Thank you for your message! We will get back to you soon.');
+                    document.getElementById('contactForm').reset();
+
+                    // Reset timing options
+                    document.querySelectorAll('.timing-option').forEach(opt => opt.classList.remove('selected'));
+
+                    // Reset button
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, function (error) {
+                    alert('Sorry, there was an error sending your message. Please try again or contact us directly.');
+                    console.error('EmailJS Error:', error);
+
+                    // Reset button
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+
+        // Chatbot Functionality
+        const chatbotToggle = document.getElementById('chatbotToggle');
+        const chatbotWindow = document.getElementById('chatbotWindow');
+        const chatbotClose = document.getElementById('chatbotClose');
+        const chatbotMessages = document.getElementById('chatbotMessages');
+        const chatbotInput = document.getElementById('chatbotInput');
+        const chatbotSend = document.getElementById('chatbotSend');
+        const quickQuestions = document.querySelectorAll('.quick-question');
+
+        // Toggle chatbot window
+        chatbotToggle.addEventListener('click', function () {
+            chatbotWindow.style.display = 'flex';
+        });
+
+        // Close chatbot window
+        chatbotClose.addEventListener('click', function () {
+            chatbotWindow.style.display = 'none';
+        });
+
+        // Send message function
+        function sendMessage() {
+            const message = chatbotInput.value.trim();
+            if (message) {
+                addMessage(message, 'user');
+                chatbotInput.value = '';
+
+                // Simulate bot response after a short delay
+                setTimeout(() => {
+                    handleBotResponse(message);
+                }, 800);
+            }
+        }
+
+        // Add message to chat
+        function addMessage(text, sender) {
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+            messageDiv.textContent = text;
+            chatbotMessages.appendChild(messageDiv);
+            chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }
+
+        // Handle bot responses
+        function handleBotResponse(userMessage) {
+            let response = '';
+            const lowerMessage = userMessage.toLowerCase();
+
+            // Advanced responses based on keywords
+            if (lowerMessage.includes('website') || lowerMessage.includes('create') || lowerMessage.includes('development')) {
+                response = "We specialize in creating custom websites for various needs. Our services include: News websites, Educational sites, Business websites, Personal portfolios, Blogs, and Online teaching platforms. Which type are you interested in?";
+            } else if (lowerMessage.includes('seo') || lowerMessage.includes('search') || lowerMessage.includes('ranking')) {
+                response = "Our SEO services help improve your website's visibility in search results. We offer keyword research, on-page optimization, technical SEO, and ongoing monitoring. Would you like to know more about our SEO packages?";
+            } else if (lowerMessage.includes('redesign') || lowerMessage.includes('recreate') || lowerMessage.includes('update')) {
+                response = "We can transform your outdated website into a modern, high-performing site. Our redesign process includes analysis, strategy, design, development, and testing. Do you have a specific website you'd like us to redesign?";
+            } else if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('budget')) {
+                response = "Our pricing depends on the project scope. Basic websites start at $999, business sites range from $2,500-$7,000, and complex projects are custom quoted. We offer free consultations to provide accurate pricing. Would you like to schedule one?";
+            } else if (lowerMessage.includes('timeline') || lowerMessage.includes('time') || lowerMessage.includes('duration')) {
+                response = "Project timelines vary by complexity. Simple websites take 2-3 weeks, medium complexity sites 4-6 weeks, and complex projects 8+ weeks. We provide detailed timelines after understanding your requirements.";
+            } else if (lowerMessage.includes('contact') || lowerMessage.includes('reach') || lowerMessage.includes('call')) {
+                response = "You can contact us via: Phone: +9779811706572, Email: info@baazarsathi.com, or our contact form on the website. Our business hours are Mon-Fri 9AM-6PM. Would you like to schedule a call?";
+            } else if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+                response = "Hello! I'm the BaazarSathi assistant. How can I help you with website development, SEO, or redesign services today?";
+            } else {
+                response = "I'm here to help with website creation, SEO, or redesign services. Could you tell me more about what you're looking for? You can also ask about pricing, timelines, or contact options.";
+            }
+
+            addMessage(response, 'bot');
+
+            // Add quick options for follow-up questions
+            if (lowerMessage.includes('website') || lowerMessage.includes('create')) {
+                setTimeout(() => {
+                    const optionsDiv = document.createElement('div');
+                    optionsDiv.classList.add('quick-questions');
+                    optionsDiv.innerHTML = `
+                        <div class="quick-question" data-question="news">News Website</div>
+                        <div class="quick-question" data-question="school">School Website</div>
+                        <div class="quick-question" data-question="company">Company Website</div>
+                        <div class="quick-question" data-question="personal">Personal Website</div>
+                        <div class="quick-question" data-question="blog">Blog Website</div>
+                        <div class="quick-question" data-question="teaching">Online Teaching</div>
+                    `;
+                    chatbotMessages.appendChild(optionsDiv);
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+                    // Add event listeners to new quick options
+                    document.querySelectorAll('.quick-question').forEach(option => {
+                        option.addEventListener('click', function () {
+                            const questionText = this.getAttribute('data-question');
+                            addMessage(this.textContent, 'user');
+                            setTimeout(() => {
+                                handleBotResponse(questionText);
+                            }, 500);
+                        });
+                    });
+                }, 500);
+            }
+        }
+
+        // Send message on button click
+        chatbotSend.addEventListener('click', sendMessage);
+
+        // Send message on Enter key
+        chatbotInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Quick question click handlers
+        quickQuestions.forEach(question => {
+            question.addEventListener('click', function () {
+                const questionText = this.getAttribute('data-question');
+                addMessage(this.textContent, 'user');
+                setTimeout(() => {
+                    handleBotResponse(questionText);
+                }, 500);
+            });
+        });
+
+        // Proactive chatbot message after 20 seconds
+        setTimeout(() => {
+            if (!chatbotWindow.style.display || chatbotWindow.style.display === 'none') {
+                const proactiveMessage = document.createElement('div');
+                proactiveMessage.classList.add('message', 'bot-message');
+                proactiveMessage.textContent = "Still exploring? I can answer questions about our services, pricing, or process!";
+                chatbotMessages.appendChild(proactiveMessage);
+                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+            }
+        }, 20000);
+    </script>
+</body>
+
+</html>
